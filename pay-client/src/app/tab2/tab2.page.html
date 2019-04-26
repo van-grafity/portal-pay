@@ -1,53 +1,86 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        Akun
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content padding>
+  <ion-toolbar>
+    <ion-title>
+      Akun
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding (ionChange)="isAccountClient()">
+  <ion-content *ngFor="let portalpay of clientList">
+
+
     <ion-item>
       <ion-avatar slot="start">
-        <img src="assets/icon/avatar.png">
+        <img src={{img}}>
       </ion-avatar>
+
       <ion-label>
         <ion-text color="danger">
-          <h2>RIZKI KHALIL</h2>
+          <h2>{{portalpay.nama}}</h2>
         </ion-text>
       </ion-label>
     </ion-item>
-  
+
     <ion-card-content>
-      <ion-text color="primary">
-        <p>No.Hp: 085263153435 </p>
-        <p>Email: Rizki.khalil73@gmail.com </p>
-        <p>Address: Jl.Ahmad Yani, Batam Kota </p>
-      </ion-text>
+      <p>No Hp :{{portalpay.no_hp}}</p>
+      <p>Email :{{portalpay.email}}</p>
+      <p>Alamat :{{portalpay.address}}</p>
     </ion-card-content>
 
-    <!-- <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-icon name="cash"> </ion-icon>
-            <br>
-            <p>Saldo</p>
-          </ion-col>
-          <ion-col>
-            <ion-icon name="card"></ion-icon>
-            <br>
-            <p>Credits</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content> -->
-    <ion-card *ngFor="let payment of furnitureList">
-      <ion-card-content>
-        <ion-card-title> {{furniture.name}}</ion-card-title>
-        <p>{{furniture.description}}</p>
-        <p>Price: ${{furniture.price}}</p>
-        <p>Quantitiy: {{furniture.quantity}}</p>
-      </ion-card-content>
-    </ion-card>
   </ion-content>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-item>
+    <ion-avatar slot="start">
+      <img src="assets/icon/avatar.png">
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="danger">
+        <h2>RIZKI KHALIL</h2>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+
+  <ion-card-content>
+    <ion-text color="primary">
+      <p>No.Hp: 085263153435 </p>
+      <p>Email: Rizki.khalil73@gmail.com </p>
+      <p>Address: Jl.Ahmad Yani, Batam Kota </p>
+    </ion-text>
+  </ion-card-content>
+
+  <!-- <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="cash"> </ion-icon>
+          <br>
+          <p>Saldo</p>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="card"></ion-icon>
+          <br>
+          <p>Credits</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content> -->
+<ion-card *ngFor="let payment of furnitureList">
+  <ion-card-content>
+    <ion-card-title> {{furniture.name}}</ion-card-title>
+    <p>{{furniture.description}}</p>
+    <p>Price: ${{furniture.price}}</p>
+    <p>Quantitiy: {{furniture.quantity}}</p>
+  </ion-card-content>
+</ion-card> -->

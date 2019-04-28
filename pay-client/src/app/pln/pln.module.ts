@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PlnPage } from './pln.page';
+import { Ionic4DatepickerModule } from 'projects/ionic4-datepicker/src/public_api';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    Ionic4DatepickerModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)

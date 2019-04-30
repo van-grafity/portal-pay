@@ -4,7 +4,7 @@ var clientDb = {
 
     getClient: function (callback) {
 
-        pool.getConnection (function(err, conn){
+        pool.getConnection(function (err, conn) {
             if (err) {
                 console.log(err);
                 return callback(err, null);

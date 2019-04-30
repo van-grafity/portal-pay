@@ -24,7 +24,32 @@ var paymentDb = {
             }
         });
 
-    } /* send by payment */
+    }, /* send by payment */
+
+    getHistoryPayment: function (callback) {
+
+        pool.getConnection(function (err, conn) {
+            if (err) {
+                console.log(err);
+                return callback(err, null);
+            }
+            else {
+                console.log("Connected!");
+                var sql = 'SELECT * FROM tb_payment';
+
+                conn.query(sql, function (err, result) {
+                    conn.release();
+                    if (err) {
+                        console.log(err);
+                        return callback(err, null);
+                    } else {
+                        console.log(result);
+                        return callback(null, result);
+                    }
+                });
+            }
+        })
+    } /* get HistoryPayment */
 }
 
 module.exports = paymentDb;

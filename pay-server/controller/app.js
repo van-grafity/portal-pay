@@ -41,4 +41,17 @@ app.post('/api/payment', urlencodedParser, jsonParser, function (req, res) {
         }
     })
 })  // end routing POST send payment
+
+app.get('/api/payment', function (req, res) {
+    mPay.getHistoryPayment(function (err, result) {
+        if (!err) {
+            res.send(result);
+        }
+        else {
+            console.log(err);
+            res.status(500).send(err);
+        }
+    })
+}) // end routing GET history payment
+
 module.exports = app
